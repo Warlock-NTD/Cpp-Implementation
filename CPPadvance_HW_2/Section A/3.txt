@@ -1,0 +1,3 @@
+Nếu n < 0 thì chỉ do while chạy
+nếu n = 0 thì for , while và do while chạy
+nếu n > 0 tất cả đều có thể chạy .

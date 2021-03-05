@@ -1,0 +1,57 @@
+A:
+1, 
+- Gán 1 biến bool với giá trị khởi tạo là grade >= 90 && grade <= 100
+- Lỗi cú pháp bên trong giá trị khởi tạo: vì >= và <= là toán tử 3 ngôi 
+--> sửa lại :// bool isA { (grade<=100) && (grade>=90)) ;
+
+2,
+- in ra kết quả : // 0.6
+
+3,
+- int x có value là 65536 khi thực hiến toán tử '*' để gán vào biến y <4bytes> thì trước đó sẽ vẫn bị vượt range của
+int (result) khi thực hiện (x*x) --> value lost data : (2^32 - 1) rồi trở lại mang value là 0 tại 2^32 .
+--> sử dụng :// long long y = static_cast<long long> x * x ;
+
+4,
+biểu thức là giá trị của 1 biến bool và giá trị biến đó bằng 0 .
+vì sqrt(2) * sqrt(2) được ngầm định là double . khi compare với int value = 2 --> value sẽ được thăng cấp toán hạng double
+và khi so sánh 2 type value double thì sẽ xảy ra error . sử dụng setprecision (17) để in ra kiểm tra 
+sqrt(2) * sqrt(2) sẽ cho ra kết quả ko hoàn toàn là 2 mà chỉ xấp xỉ 2. --> bool trả về 0 ;
+
+5,
+- chia int cho 0 sẽ ném ra 1 unhandled exception : integer division by zero .
+- chia lấy dư int cho 0 sẽ ném ra 1 unhandled exception : integer division by zero .
+
+6,
+- Severity Code Description Project File Line Suppression State Error (active) E2138 expression must have arithmetic or unscoped enum type	
+vì "three" là dạng const char [] nên ko thể thực hiện toán tử + với 1 constant dạng integer rồi gán lại cho 1 biến integer.
+- complier ném ra 1 cảnh báo cho biến double x chưa được initialize , build và debug fail khi cố tình sử dụng biến x đó.
+
+7,
+OUTPUT:
+0
+0.75
+0.75
+0.75
+
+8,
+- error C2371: 'arg1': redefinition; different basic types
+- error C2088: '<<': illegal for class
+--> lỗi định nghĩa nhiều hơn 1 lần biến arg1 .
+
+9,
+- chương trình print : \\ A
+- bên trong block arg1 chỉ tới biến char arg1 được khởi tạo gán giá trị 'A'
+vì khối bên trong scope block thì k thể nhìn thấy biến arg1 trước đó bên ngoài hàm main() .
+
+10,
+- chương trình prin : \\ -1
+- khi ra khỏi block thì biến arg1 sẽ bị destruct , khi đó arg1 chỉ tới biến int arg1 có giá trị khởi tạo là -1 ;
+
+11,
+ bên trong biểu thức có chứa constant int / constant int , trước khi gán cho double C thì phép tính bên phải bận được thực
+thi trước do đó (5/9) sẽ trả về 0 --> double C sẽ luôn nhận constant value 0.0
+
+12,
+ in ra "Here" vì if (true); else ; đã kết thúc trước đó nên ko có hiệu lực với khối block đứng sau.
+
