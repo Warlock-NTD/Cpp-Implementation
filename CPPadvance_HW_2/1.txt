@@ -1,0 +1,7 @@
+Bài tập bổ sung : 
+
+Bài 1:
+1, Dấu ";" sau điều kiện while()
+2, Dấu "," ko hợp lệ trong for() , đúng syntax : for ( ; ; )
+3, syntax do while nếu do thực thi 1 block chứ ko phải câu lệnh đơn thì phải có { } .
+4, vòng  lặp vô tận do cập nhật biến i luôn thỏa mãn điều kiện dừng.
