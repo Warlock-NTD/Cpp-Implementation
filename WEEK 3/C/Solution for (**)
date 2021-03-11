@@ -1,0 +1,15 @@
+- chúng ta có n số nguyên theo đề bài là time của mỗi người khám ( đến cùng 1 lúc )
+- gọi các thời gian đó lần lượt là x1 , x2, x3, x...xn;
+- nếu theo tự nhiên ta sẽ có thời gian chờ lần lượt của các bệnh nhân là w1, w2, w3, ... wn
+w1 = 0
+w2 = w1 + x1
+w3 = w2 + x2
+w4 = w3 + x3
+wn = w[n-1] + x[n-1]
+- khi đó ta có tổng time chờ là S = w1 + w2 +...+ wn = (n-1)x1 + (n-2)x2 + (n-3)x3 + ... + (n-(n-1))x[n-1] + (n-n)x[n]
+- giả sử xS,xL lần lượt là min và max của dãy un { xn-- , x1} khi đó ta có S(xL) = xL * (tổng từ 0 đến n-1 ) ; S(xS) = xS * (tổng từ 0 đến n-1 )
+và ta có S(xL) >= S >= S(xS) vậy suy ra S nhỏ nhất khi và chi khi cả dãy un gồm các phần tử x1...xn phải đồng bộ bằng xS 
+hoặc là dãy tuyến tính tăng dần.
+giải thích : các toán hạng trong phép nhân tuyến tính đôi một với dãy x1...xn là dãy tuyến tính giảm dần từ (n-1) đến 0, do đó
+khi và chỉ khi un tuyến tính tăng dần thì S min.
+--> ta sắp xếp theo ascending order rồi lấy prefix sum , sau đó lấy tổng mảng prefix sum để in ra time chờ ngắn nhất.
