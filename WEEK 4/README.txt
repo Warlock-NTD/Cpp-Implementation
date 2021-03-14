@@ -1,2 +1,2 @@
-Hoàn thành PassWord , MysteryNumber , SherlockArray, Falling Rock
-Qua 100% số testcase.
+finished PassWord , MysteryNumber , SherlockArray, Falling Rock
+Passed 100% testcase.
