@@ -22,16 +22,6 @@ inline void binarySearching(const usg_t& key, usg_t arr[])
 	usg_t time{ 0 };
 	while (time < sizeArr)
 	{
-		if (arr[low] == key)
-		{
-			std::cout << "BinSearch : " <<low << '\n';
-			break;
-		}
-		else if(arr[high] == key)
-		{
-			std::cout << "BinSearch : " <<high << '\n';
-			break;
-		}
 		if (arr[bin] > key)
 		{
 			high = bin;
