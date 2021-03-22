@@ -134,89 +134,26 @@ inline void checkGame(const usg_t &x, const usg_t &y, bool & check)
 }
 inline void impact(usg_t x, usg_t y)
 {
-			for (usg_t a = x - 1; a <= (n-1) ; a++)
+			for (usg_t a = x - 2; a <= x ; a++)
 			{
-				usg_t keepTrack{ 0 };
-				for (usg_t b = y - 1; b <= (n-1) ; b++) {
+				if ((a < 0) || (a > (n - 1)))
+					continue;
+				for (usg_t b = y - 2; b <= y ; b++) {
+					if ((b < 0) || (b > (n - 1)))
+						continue;
 					if (GameMap.at(a).at(b) != MINE)
 					{
 						if (GameMap.at(a).at(b) != NONE)
 						{
 							Present.at(a).at(b) = GameMap.at(a).at(b);
-							break;
 						}
-						else
+						else if ((GameMap.at(a).at(b) == NONE) && (Present.at(a).at(b) == HIDE))
 						{
 							Present.at(a).at(b) = GameMap.at(a).at(b);
-							++keepTrack;
+							impact(a+1, b+1);
 						}
 					}
 				}
-				if (keepTrack <= 2)
-					break;
-			}
-			for (usg_t a = x - 1; a > 0; a--)
-			{
-				usg_t keepTrack{ 0 };
-				for (usg_t b = y - 1; b > 0; b--) {
-					if (GameMap.at(a).at(b) != MINE)
-					{
-						if (GameMap.at(a).at(b) != NONE)
-						{
-							Present.at(a).at(b) = GameMap.at(a).at(b);
-							break;
-						}
-						else
-						{
-							Present.at(a).at(b) = GameMap.at(a).at(b);
-							++keepTrack;
-						}
-					}
-				}
-				if (keepTrack <= 2)
-					break;
-			}
-			for (usg_t a = x - 1; a < (n-1); a++)
-			{
-				usg_t keepTrack{ 0 };
-				for (usg_t b = y - 1; b > 0; b--) {
-					if (GameMap.at(a).at(b) != MINE)
-					{
-						if (GameMap.at(a).at(b) != NONE)
-						{
-							Present.at(a).at(b) = GameMap.at(a).at(b);
-							break;
-						}
-						else
-						{
-							Present.at(a).at(b) = GameMap.at(a).at(b);
-							++keepTrack;
-						}
-					}
-				}
-				if (keepTrack <= 2)
-					break;
-			}
-			for (usg_t a = x - 1; a > 0; a--)
-			{
-				usg_t keepTrack{ 0 };
-				for (usg_t b = y - 1; b < (n-1); b++) {
-					if (GameMap.at(a).at(b) != MINE)
-					{
-						if (GameMap.at(a).at(b) != NONE)
-						{
-							Present.at(a).at(b) = GameMap.at(a).at(b);
-							break;
-						}
-						else
-						{
-							Present.at(a).at(b) = GameMap.at(a).at(b);
-							++keepTrack;
-						}
-					}
-				}
-				if (keepTrack <= 2)
-					break;
 			}
 }
 inline void ResetGame()
