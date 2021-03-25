@@ -4,7 +4,7 @@ typedef int usg_t;
 typedef unsigned char c;
 typedef std::vector<c> row;
 typedef std::vector<row> matrix;
-const c black{ 229 }, white{ 254 }; // 254 // 240
+const c black{ 233 }, white{ 254 }; // 254 // 240
 inline matrix Hadamard(usg_t n);
 inline matrix negative_Hadamard(matrix neg);
 inline void combineHadamard(matrix & H1, matrix& H2);
