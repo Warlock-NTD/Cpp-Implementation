@@ -3,4 +3,5 @@ Work partical C :
 2 : Hoán Vị độ dài k .
 3 : Tổ hợp độ dài k .
 4 : Ma trận Hadamard .
+5 : Partition .
 6: Hoán vị Johnson - Trotter .
